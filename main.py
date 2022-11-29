@@ -28,6 +28,7 @@ def main(args):
 
     for step in range(args.start_step, 1000):
         #forward() method
+
         x = torch.randn(3, 10).to('cuda')
         y = torch.randn(3, 10).to('cuda')
         out = model(x)
@@ -43,7 +44,8 @@ def main(args):
         if step > 0 and step % args.save_interval == 0:
             client_sd= { "step": step}
             model.save_checkpoint(args.output_dir, str(step), client_state=client_sd)
-
+        if step % 100 == 0:
+            print(f'step {step} loss {loss}')
     print('---finished----')
 
 
@@ -53,10 +55,10 @@ def get_args_parser():
     parser.add_argument('--init_method', default='slurm', type=str)
     parser.add_argument('--local_rank', default=0, type=int)
     parser.add_argument('--zero_stage', default=1, type=int)
-    parser.add_argument('--start_step', default=0, type=int)
-    parser.add_argument('--load_optimizer_states', default=False, type=bool)
+    parser.add_argument('--start_step', default=200, type=int)
+    parser.add_argument('--load_optimizer_states', default=True, type=bool)
 
-    parser.add_argument('--save_interval', default=200, type=int)
+    parser.add_argument('--save_interval', default=2000, type=int)
     parser.add_argument('--output_dir', default='outputs', type=str)
 
     args = parser.parse_args()

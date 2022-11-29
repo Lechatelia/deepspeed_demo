@@ -38,6 +38,78 @@
             }
         },
         {
+            "name": "train_1gpu",
+            "type": "python",
+            "request": "launch",
+            "program": "/nfs/zhujinguo/anaconda3/envs/xmodaler/lib/python3.7/site-packages/torch/distributed/launch.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--nproc_per_node=1",
+                "--master_port=26503",
+                "${workspaceFolder}/main.py",
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "RANK": "0",
+                "LOCAL_RANK": "0",
+                "WORLD_SIZE": "1",
+                "MASTER_ADDR": "127.0.0.1",
+                "MASTER_PORT": "26503",
+                "DATA_PATH": "/nfs/zhujinguo/datasets",
+                "CUDA_VISIBLE_DEVICES": "0",
+                "TORCH_DISTRIBUTED_DEBUG": "DETAIL",
+            }
+        },
+        {
+            "name": "train_2gpu",
+            "type": "python",
+            "request": "launch",
+            "program": "/nfs/zhujinguo/anaconda3/envs/xmodaler/lib/python3.7/site-packages/torch/distributed/launch.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--nproc_per_node=2",
+                "--master_port=26503",
+                "${workspaceFolder}/main.py",
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "RANK": "0",
+                "LOCAL_RANK": "0",
+                "WORLD_SIZE": "2",
+                "MASTER_ADDR": "127.0.0.1",
+                "MASTER_PORT": "26503",
+                "DATA_PATH": "/nfs/zhujinguo/datasets",
+                "CUDA_VISIBLE_DEVICES": "0,1",
+                "TORCH_DISTRIBUTED_DEBUG": "DETAIL",
+            }
+        },
+        {
+            "name": "train_3gpu",
+            "type": "python",
+            "request": "launch",
+            "program": "/nfs/zhujinguo/anaconda3/envs/xmodaler/lib/python3.7/site-packages/torch/distributed/launch.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--nproc_per_node=3",
+                "--master_port=26503",
+                "${workspaceFolder}/main.py",
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "RANK": "0",
+                "LOCAL_RANK": "0",
+                "WORLD_SIZE": "3",
+                "MASTER_ADDR": "127.0.0.1",
+                "MASTER_PORT": "26503",
+                "DATA_PATH": "/nfs/zhujinguo/datasets",
+                "CUDA_VISIBLE_DEVICES": "0,1,2",
+                "TORCH_DISTRIBUTED_DEBUG": "DETAIL",
+            }
+        },
+        {
             "name": "train_4gpu",
             "type": "python",
             "request": "launch",

@@ -229,6 +229,7 @@ def deepspeed_init(model, parameters, args):
             "contiguous_gradients": True,
             "offload_param": None,
             "offload_optimizer": None,
+            "elastic_checkpoint": True,
         },
         "flops_profiler": {
             "enabled": False,
