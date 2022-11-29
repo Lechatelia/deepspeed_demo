@@ -23,16 +23,12 @@
         "${workspaceFolder}",
         // "/mnt/lustre/zhujinguo/anaconda3/envs/mmdet/lib/python3.7/site-packages",
         "/nfs/zhujinguo/anaconda3/envs/xmodaler/lib/python3.7/site-packages",
-        "/nfs/zhujinguo/codes/deepspeed",
-        "/nfs/zhujinguo/codes/tutel",
-        "/mnt/lustre/zhujinguo/jinguo_data/codes/Uni-Perceiver"
+        "/nfs/zhujinguo/codes/deepspeed_0.7.5",
     ],
     "python.analysis.extraPaths": [
         "${workspaceFolder}",
         "/nfs/zhujinguo/anaconda3/envs/xmodaler/lib/python3.7/site-packages",
-        "/nfs/zhujinguo/codes/deepspeed",
-        "/nfs/zhujinguo/codes/tutel",
-        "/mnt/lustre/zhujinguo/jinguo_data/codes/Uni-Perceiver"
+        "/nfs/zhujinguo/codes/deepspeed_0.7.5",
     ],
 
 
